@@ -28,6 +28,10 @@
      const p_btn_clicked = e.target
      console.log(p_btn_clicked);
 
+     if(!p_btn_clicked.classList.contains("p-btn")){
+      return
+     }
+
      p_btn.forEach((currElem)=>{
      currElem.classList.remove("p-btn-active")
      })
@@ -51,21 +55,70 @@
 
    })
 
+     // =========================================================================================
+ 
+  //  swiper js code
+ 
+  //=============================================================================================
+
   //  swipper js code
 
-  
-  var swiper = new Swiper(".mySwiper", {
-    slidesPerView: 3,
-    spaceBetween: 30,
-    autoplay:{
-      delay:2500,
-      dusableOnInteraction:false
-   },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-  });
+  //   var swiper = new Swiper(".mySwiper", {
+  //   slidesPerView: 3,
+  //    spaceBetween: 30,
+  //    autoplay : {
+  //     delay:2500,
+  //     clickable:true,
+  //    },
+  //    pagination: {
+  //     el: ".swiper-pagination",
+  //     clickable: true,
+  //   },
+  // });
+
+   //  happy client work
+   const myJsmedia = (widthSize) => {
+    if(widthSize.matches) {
+      const swiper=new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        autoplay : {
+          delay:2500,
+          disableOnInteraction:false,
+         },
+         pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+       });
+     }
+     else{
+     const swiper= new Swiper(".mySwiper", {
+        slidesPerView: 2,
+        spaceBetween: 30,
+        autoplay : {
+          delay:2500,
+          clickable:true,
+         },
+         pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+     });
+    }
+  }
+     const widthSize  = window.matchMedia("(max-width: 780px)");
+     //coll listner function at run time 
+    myJsmedia(widthSize);
+     //Attach listner function on state change
+     widthSize.addEventListener("change",myJsmedia)
+
+      // =========================================================================================
+ 
+  // scr0ll to top button
+ 
+  //=============================================================================================
+
 
    //scroll to top button
    const heroSection = document.querySelector(".section-hero")
@@ -82,6 +135,13 @@
    };
 
    scroollElement.addEventListener("click",scroollTop)
+
+    // =========================================================================================
+ 
+  //  Animated numbers
+ 
+  //=============================================================================================
+
 
 
    //Animate numbers
@@ -108,5 +168,7 @@
     };
     updateNumber();
    })
+
+   
 
    

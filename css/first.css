@@ -792,7 +792,9 @@
     media queries
  
  =============================================================================================*/
-   /* 1500px */
+
+
+   /*=============================================== 1500px====================================================== */
 
   @media (max-width:95em){
     .container{
@@ -805,7 +807,7 @@
     }
   }
 
-  /*1200px */
+  /*=================================================1200px====================================================== */
 
   @media (max-width:75em){
    html {
@@ -922,7 +924,7 @@
 
    }
  
-  /* below 790px */
+   /*=================================================== below 790px ===============================================*/
 
    @media (max-width:49em) {
     .container{
@@ -964,8 +966,97 @@
     .section-biodata .bio-image img {
       width: 50%;
     }
-   }
 
+     /* portfolio section */
+
+    .section-portfolio .grid-three-column {
+      grid-template-columns: repeat(2,1fr);
+    }
+
+    /* work data */
+
+     .section-work-data .grid-four-column {
+      grid-template-columns: repeat(2,1fr);
+    } 
+
+    .img-overlay .common-heading {
+      font-size: 3.2rem;
+    }
+
+    .img-overlay .common-heading ::before,
+    .img-overlay .common-heading ::after {
+         content:"";
+         width: 0;
+         height: 0;
+    }
+    }
+
+   /*================================================below 560============================================================ */
+
+    @media (max-width:35em){
+      .header {
+        padding: 0 3.2rem;
+      }
+
+      .header .logo {
+        width: 50%;
+      }
+
+      /* portfolio */
+
+      .p-btns {
+        gap: 3.2rem;
+      }
+
+      .btn {
+        padding: 1rem 2rem;
+      }
+
+      .img-overlay .common-heading {
+        font-size: 2.4rem;
+      }
+     
+      /* work data */
+
+      .counter-numbers {
+        font-size: 3.2rem;
+      }
+
+      /* service section */
+
+      .section-services .grid-three-column {
+        grid-template-columns: 1fr;
+      }
+
+      /* section freelancing */
+
+      .section-freelancing h2 {
+        font-size: 3rem;
+      }
+
+      /* contact section */
+
+      .contact-container {
+        padding: 0 3.2rem;
+      }
+
+      .contact-container .grid-two-column {
+        grid-template-columns: 1fr;
+      }
+
+      .section-contact-main input[type="submit"] {
+        max-width: 40%;
+      }
+
+      /* footer section */
+
+      .section-footer .f-about,
+      .section-footer .f-address {
+        grid-column: 1/-1;
+      }
+
+
+    } 
 
 
 
